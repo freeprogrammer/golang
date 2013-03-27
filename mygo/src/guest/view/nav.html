@@ -1,0 +1,18 @@
+{{define "nav"}}
+		<h1>留言板</h1>
+		<div id="nav">
+			<ul>
+				<li><a href="http://localhost:9090/">首页</a></li>
+				{{if .NonLogin}}
+				<li><a href="http://localhost:9090/login">登录</a></li>
+				<li><a href="http://localhost:9090/reg">注册</a></li>
+				{{else}}
+				{{if .IsAdmin }}
+				<li><a href="http://localhost:9090/admin">后台管理</a></li>
+				{{end}}
+				<li><a href="http://localhost:9090/exit">退出</a></li>
+				{{end}}
+			</ul>
+		</div>
+{{end}}
+
